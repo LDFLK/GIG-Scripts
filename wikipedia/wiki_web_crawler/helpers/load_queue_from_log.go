@@ -1,6 +1,7 @@
 package helpers
 
 import (
+	"GIG-Scripts/global_helpers"
 	"GIG-Scripts/wikipedia/wiki_web_crawler/constants"
 	"bufio"
 	"log"
@@ -8,7 +9,7 @@ import (
 )
 
 func LoadQueueFromLog(queue chan string) error {
-	files, err := getAllLogs(constants.QueueLogDir)
+	files, err := global_helpers.getAllLogs(constants.QueueLogDir)
 	//if no log files exist
 	if err != nil {
 		return err

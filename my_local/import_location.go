@@ -39,5 +39,5 @@ func main() {
 	helpers.AddDecodedData(lgSource, decoders.MyLocalLGDecoder{}, exit)
 	helpers.AddDecodedData(mohSource, decoders.MyLocalMOHDecoder{}, exit)
 
-	log.Println("Completed importing MyLocal data.")
+	log.Println("Completed importing MyLocal location data.")
 }

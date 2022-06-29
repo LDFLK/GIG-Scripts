@@ -1,4 +1,4 @@
-package helpers
+package global_helpers
 
 import (
 	"log"
@@ -7,9 +7,9 @@ import (
 	"sort"
 )
 
-func getAllLogs(logPath string) ([]string, error) {
+func GetAllFiles(filePath string) ([]string, error) {
 	var files []string
-	err := filepath.Walk(logPath, func(path string, info os.FileInfo, err error) error {
+	err := filepath.Walk(filePath, func(path string, info os.FileInfo, err error) error {
 		files = append(files, path)
 		return nil
 	})

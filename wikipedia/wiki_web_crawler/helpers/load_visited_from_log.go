@@ -1,6 +1,7 @@
 package helpers
 
 import (
+	"GIG-Scripts/global_helpers"
 	"GIG-Scripts/wikipedia/wiki_web_crawler/constants"
 	"bufio"
 	"log"
@@ -8,7 +9,7 @@ import (
 )
 
 func LoadVisitedFromLog(visited map[string]bool) (map[string]bool, error) {
-	files, err := getAllLogs(constants.VisitedLogDir)
+	files, err := global_helpers.GetAllFiles(constants.VisitedLogDir)
 	//if no log files exist
 	if err != nil {
 		return visited, err
