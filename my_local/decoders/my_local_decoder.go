@@ -10,7 +10,7 @@ import (
 var entityMemo = map[string]models.Entity{}
 
 type MyLocalDecoderInterface interface {
-	DecodeToEntity(record []string, source string) models.Entity
+	DecodeToEntity(record []string, source string, headers []string) models.Entity
 }
 
 type MyLocalLocationDecoder struct {

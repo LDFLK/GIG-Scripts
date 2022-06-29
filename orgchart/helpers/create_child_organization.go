@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-var childCategories = []string{"Organization", "OrgChart-Level1"}
+var childCategories = []string{constants.Organization, "OrgChart-Level1", constants.Department}
 
 func CreateChildOrganization(fileName string, departmentName string, gazetteDate time.Time, ministry string) extended_models.Organization {
 	childEntity := extended_models.Organization{}

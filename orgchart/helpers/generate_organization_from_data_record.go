@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-var categories = []string{constants.OrgChartCategory}
+var categories = []string{constants.OrgChartCategory, constants.Ministry, constants.Organization}
 
 func GenerateOrganizationFromDataRecord(fileName string, ministry string, departments []string, gazetteDate time.Time,
 	nameStructure map[string]string) extended_models.Organization {

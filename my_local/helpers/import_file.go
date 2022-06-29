@@ -38,14 +38,14 @@ func AddDecodedData(filename string, decoder decoders.MyLocalDecoderInterface, e
 		default:
 			rec, err := tsvReader.Read()
 			if err == io.EOF {
-				break
+				return
 			}
 			if err != nil {
 				log.Fatal(err)
 			}
 			// do something with read line
 			fmt.Printf("%+v\n", rec)
-			entity := decoder.DecodeToEntity(rec, source)
+			entity := decoder.DecodeToEntity(rec, source, headers)
 			//save to db
 			_, saveErr := GIG_Scripts.GigClient.CreateEntity(entity)
 			if saveErr != nil {
