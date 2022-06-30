@@ -44,6 +44,7 @@ func AddDecodedData(filename string, decoder decoders.MyLocalDecoderInterface, e
 			}
 			// do something with read line
 			entity := decoder.DecodeToEntity(rec, source, headers)
+			log.Println("saving: ", entity.GetTitle())
 			//save to db
 			_, saveErr := GIG_Scripts.GigClient.CreateEntity(entity)
 			if saveErr != nil {
