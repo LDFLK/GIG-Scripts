@@ -23,13 +23,13 @@ type MyLocalLocationDecoder struct {
 
 func (d MyLocalLocationDecoder) AppendToParentEntity(entity models.Entity) {
 	//update parent entity
-	payload := models.UpdateEntity{
+	modifiedEntity := models.UpdateEntity{
 		SearchAttribute: "attributes.location_id",
 		SearchValue:     *new(models.Value).SetValueString(d.ParentId),
 		Attribute:       d.Attribute,
 		Value:           *new(models.Value).SetSource(d.Source).SetValueString(entity.GetTitle()),
 	}
-	if _, err := GIG_Scripts.GigClient.AppendToEntity(payload); err != nil {
+	if _, err := GIG_Scripts.GigClient.AppendToEntity(modifiedEntity); err != nil {
 		log.Fatal("error updating parent entity:", err)
 	}
 }
