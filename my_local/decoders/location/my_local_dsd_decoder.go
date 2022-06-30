@@ -1,11 +1,12 @@
-package decoders
+package location
 
 import (
+	"GIG-Scripts/my_local/decoders"
 	"github.com/lsflk/gig-sdk/models"
 )
 
 type MyLocalDSDDecoder struct {
-	MyLocalDecoderInterface
+	decoders.MyLocalDecoderInterface
 }
 
 func (d MyLocalDSDDecoder) DecodeToEntity(record []string, source string, headers []string) models.Entity {
@@ -22,6 +23,9 @@ func (d MyLocalDSDDecoder) DecodeToEntity(record []string, source string, header
 		Source:     source,
 	}
 	decoder.ParentId = record[4]
+	decoder.Category = "Divisional Secretariats Division"
+	decoder.Attribute = "divisional_secretariats_divisions"
+	decoder.Source = source
 	decoder.ParentEntity = decoder.GetParentEntity()
 	entity := decoder.MapToEntity()
 	entity.AddCategory("LOCATION")

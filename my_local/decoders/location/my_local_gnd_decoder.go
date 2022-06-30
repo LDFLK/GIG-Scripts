@@ -1,11 +1,12 @@
-package decoders
+package location
 
 import (
+	"GIG-Scripts/my_local/decoders"
 	"github.com/lsflk/gig-sdk/models"
 )
 
 type MyLocalGNDDecoder struct {
-	MyLocalDecoderInterface
+	decoders.MyLocalDecoderInterface
 }
 
 func (d MyLocalGNDDecoder) DecodeToEntity(record []string, source string, headers []string) models.Entity {

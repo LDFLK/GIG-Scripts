@@ -1,12 +1,13 @@
-package decoders
+package location
 
 import (
 	"GIG-Scripts/extended_models"
+	"GIG-Scripts/my_local/decoders"
 	"github.com/lsflk/gig-sdk/models"
 )
 
 type MyLocalMOHDecoder struct {
-	MyLocalDecoderInterface
+	decoders.MyLocalDecoderInterface
 }
 
 func (d MyLocalMOHDecoder) DecodeToEntity(record []string, source string, headers []string) models.Entity {

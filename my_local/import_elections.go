@@ -2,7 +2,7 @@ package main
 
 import (
 	"GIG-Scripts/global_helpers"
-	"GIG-Scripts/my_local/decoders"
+	"GIG-Scripts/my_local/decoders/election"
 	"GIG-Scripts/my_local/helpers"
 	"log"
 	"os"
@@ -37,7 +37,7 @@ func main() {
 			nameArray := strings.Split(fileName, " ")
 			log.Println(nameArray[0], nameArray[2])
 
-			decoder := decoders.MyLocalElectionDecoder{ElectionType: nameArray[0], ElectionYear: nameArray[2]}
+			decoder := election.MyLocalElectionDecoder{ElectionType: nameArray[0], ElectionYear: nameArray[2]}
 			helpers.AddDecodedData(file, decoder, exit)
 		}
 	}

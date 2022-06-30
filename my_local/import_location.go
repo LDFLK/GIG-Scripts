@@ -1,7 +1,7 @@
 package main
 
 import (
-	"GIG-Scripts/my_local/decoders"
+	"GIG-Scripts/my_local/decoders/location"
 	"GIG-Scripts/my_local/helpers"
 	"log"
 	"os"
@@ -29,15 +29,15 @@ func main() {
 	mohSource := DataPath + "moh.tsv"
 
 	//Needs to run decoder in the exact order to allow connecting with parents
-	helpers.AddDecodedData(countrySource, decoders.MyLocalCountryDecoder{}, exit)
-	helpers.AddDecodedData(provinceSource, decoders.MyLocalProvinceDecoder{}, exit)
-	helpers.AddDecodedData(districtSource, decoders.MyLocalDistrictDecoder{}, exit)
-	helpers.AddDecodedData(dsdSource, decoders.MyLocalDSDDecoder{}, exit)
-	helpers.AddDecodedData(gndSource, decoders.MyLocalGNDDecoder{}, exit)
-	helpers.AddDecodedData(edSource, decoders.MyLocalEDDecoder{}, exit)
-	helpers.AddDecodedData(pdSource, decoders.MyLocalPDDecoder{}, exit)
-	helpers.AddDecodedData(lgSource, decoders.MyLocalLGDecoder{}, exit)
-	helpers.AddDecodedData(mohSource, decoders.MyLocalMOHDecoder{}, exit)
+	helpers.AddDecodedData(countrySource, location.MyLocalCountryDecoder{}, exit)
+	helpers.AddDecodedData(provinceSource, location.MyLocalProvinceDecoder{}, exit)
+	helpers.AddDecodedData(districtSource, location.MyLocalDistrictDecoder{}, exit)
+	helpers.AddDecodedData(dsdSource, location.MyLocalDSDDecoder{}, exit)
+	helpers.AddDecodedData(gndSource, location.MyLocalGNDDecoder{}, exit)
+	helpers.AddDecodedData(edSource, location.MyLocalEDDecoder{}, exit)
+	helpers.AddDecodedData(pdSource, location.MyLocalPDDecoder{}, exit)
+	helpers.AddDecodedData(lgSource, location.MyLocalLGDecoder{}, exit)
+	helpers.AddDecodedData(mohSource, location.MyLocalMOHDecoder{}, exit)
 
 	log.Println("Completed importing MyLocal location data.")
 }
