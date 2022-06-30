@@ -14,7 +14,7 @@ func GetAllFiles(filePath string) ([]string, error) {
 		return nil
 	})
 	if err != nil {
-		log.Println("error loading log files")
+		log.Println("error loading files")
 		return []string{}, err
 	}
 	sort.Strings(files)

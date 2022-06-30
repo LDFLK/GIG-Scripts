@@ -15,12 +15,12 @@ func (d MyLocalProvinceDecoder) DecodeToEntity(record []string, source string, h
 		Name:       record[2] + " Province",
 		Centroid:   record[3],
 		Population: record[4],
-		ParentId:   "LK",
 		GeoSource:  "province",
 		Category:   "Province",
 		Attribute:  "provinces",
 		Source:     source,
 	}
+	decoder.ParentId = "LK"
 	decoder.ParentEntity = decoder.GetParentEntity()
 	entity := decoder.MapToEntity()
 	entity.AddCategory("LOCATION")

@@ -15,12 +15,12 @@ func (d MyLocalDistrictDecoder) DecodeToEntity(record []string, source string, h
 		Name:       record[3] + " District",
 		Centroid:   record[4],
 		Population: record[5],
-		ParentId:   record[2],
 		GeoSource:  "district",
 		Category:   "District",
 		Attribute:  "districts",
 		Source:     source,
 	}
+	decoder.ParentId = record[2]
 	decoder.ParentEntity = decoder.GetParentEntity()
 	entity := decoder.MapToEntity()
 	entity.AddCategory("LOCATION")

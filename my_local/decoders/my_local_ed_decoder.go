@@ -16,12 +16,12 @@ func (d MyLocalEDDecoder) DecodeToEntity(record []string, source string, headers
 		Name:       record[1] + " Electoral District",
 		Centroid:   record[5],
 		Population: record[6],
-		ParentId:   record[3],
 		GeoSource:  "ed",
 		Category:   "Electoral District",
 		Attribute:  "electoral_districts",
 		Source:     source,
 	}
+	decoder.ParentId = record[3]
 	decoder.ParentEntity = decoder.GetParentEntity()
 	entity := decoder.MapToEntity()
 	entity.AddCategory("LOCATION")

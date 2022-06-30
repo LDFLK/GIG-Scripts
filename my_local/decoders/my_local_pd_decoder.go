@@ -16,12 +16,12 @@ func (d MyLocalPDDecoder) DecodeToEntity(record []string, source string, headers
 		Name:       record[1] + " Polling Division",
 		Centroid:   record[7],
 		Population: record[8],
-		ParentId:   record[5],
 		GeoSource:  "pd",
 		Category:   "Polling Division",
 		Attribute:  "polling_divisions",
 		Source:     source,
 	}
+	decoder.ParentId = record[5]
 	decoder.ParentEntity = decoder.GetParentEntity()
 	entity := decoder.MapToEntity()
 	entity.AddCategory("LOCATION")

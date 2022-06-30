@@ -16,12 +16,12 @@ func (d MyLocalDSDDecoder) DecodeToEntity(record []string, source string, header
 		Name:       record[2] + " Divisional Secretariats Division",
 		Centroid:   record[5],
 		Population: record[6],
-		ParentId:   record[4],
 		GeoSource:  "dsd",
 		Category:   "Divisional Secretariats Division",
 		Attribute:  "divisional_secretariats_divisions",
 		Source:     source,
 	}
+	decoder.ParentId = record[4]
 	decoder.ParentEntity = decoder.GetParentEntity()
 	entity := decoder.MapToEntity()
 	entity.AddCategory("LOCATION")

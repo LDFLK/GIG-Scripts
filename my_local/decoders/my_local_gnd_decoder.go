@@ -16,12 +16,12 @@ func (d MyLocalGNDDecoder) DecodeToEntity(record []string, source string, header
 		Name:       record[3] + " Grama Niladhari Division",
 		Centroid:   record[7],
 		Population: record[8],
-		ParentId:   record[6],
 		GeoSource:  "gnd",
 		Category:   "Grama Niladhari Division",
 		Attribute:  "grama_niladhari_divisions",
 		Source:     source,
 	}
+	decoder.ParentId = record[6]
 	decoder.ParentEntity = decoder.GetParentEntity()
 	entity := decoder.MapToEntity()
 	entity.AddCategory("LOCATION")
