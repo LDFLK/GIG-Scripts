@@ -22,8 +22,8 @@ func (d MyLocalDSDDecoder) DecodeToEntity(record []string, source string, header
 	d.Category = "Divisional Secretariats Division"
 	d.Attribute = "divisional_secretariats_divisions"
 	d.Source = source
-	d.ParentEntity = d.GetParentEntity()
 	d.ParentAttribute = "location_id"
+	d.ParentEntity = d.GetParentEntity()
 	entity := d.MapToEntity()
 	entity.AddCategory("LOCATION")
 	d.AppendToParentEntity(entity)
