@@ -35,7 +35,6 @@ func main() {
 			fileName = strings.Replace(fileName, "_", " ", -1)
 			fileName = strings.ToUpper(fileName)
 			nameArray := strings.Split(fileName, " ")
-			log.Println(nameArray[0], nameArray[2])
 
 			decoder := election.MyLocalElectionDecoder{ElectionType: nameArray[0], ElectionYear: nameArray[2]}
 			helpers.AddDecodedData(file, decoder, exit)

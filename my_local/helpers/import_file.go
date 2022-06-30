@@ -4,7 +4,6 @@ import (
 	GIG_Scripts "GIG-Scripts"
 	"GIG-Scripts/my_local/decoders"
 	"encoding/csv"
-	"fmt"
 	"io"
 	"log"
 	"os"
@@ -44,7 +43,6 @@ func AddDecodedData(filename string, decoder decoders.MyLocalDecoderInterface, e
 				log.Fatal(err)
 			}
 			// do something with read line
-			fmt.Printf("%+v\n", rec)
 			entity := decoder.DecodeToEntity(rec, source, headers)
 			//save to db
 			_, saveErr := GIG_Scripts.GigClient.CreateEntity(entity)
