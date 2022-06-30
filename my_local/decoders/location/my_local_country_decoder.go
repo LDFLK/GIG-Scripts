@@ -8,6 +8,7 @@ import (
 
 type MyLocalCountryDecoder struct {
 	decoders.MyLocalDecoderInterface
+	MyLocalLocationDecoder
 }
 
 func (d MyLocalCountryDecoder) DecodeToEntity(record []string, source string, headers []string) models.Entity {

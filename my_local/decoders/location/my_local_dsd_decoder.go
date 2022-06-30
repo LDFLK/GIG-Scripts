@@ -7,29 +7,26 @@ import (
 
 type MyLocalDSDDecoder struct {
 	decoders.MyLocalDecoderInterface
+	MyLocalLocationDecoder
 }
 
 func (d MyLocalDSDDecoder) DecodeToEntity(record []string, source string, headers []string) models.Entity {
 
 	// 0-id	1-dsd_id	2-name	3-province_id	4-district_id	5-centroid	6-population
-	decoder := MyLocalLocationDecoder{
-		LocationId: record[1],
-		Name:       record[2] + " Divisional Secretariats Division",
-		Centroid:   record[5],
-		Population: record[6],
-		GeoSource:  "dsd",
-		Category:   "Divisional Secretariats Division",
-		Attribute:  "divisional_secretariats_divisions",
-		Source:     source,
-	}
-	decoder.ParentId = record[4]
-	decoder.Category = "Divisional Secretariats Division"
-	decoder.Attribute = "divisional_secretariats_divisions"
-	decoder.Source = source
-	decoder.ParentEntity = decoder.GetParentEntity()
-	entity := decoder.MapToEntity()
+	d.LocationId = record[1]
+	d.Name = record[2] + " Divisional Secretariats Division"
+	d.Centroid = record[5]
+	d.Population = record[6]
+	d.GeoSource = "dsd"
+	d.ParentId = record[4]
+	d.Category = "Divisional Secretariats Division"
+	d.Attribute = "divisional_secretariats_divisions"
+	d.Source = source
+	d.ParentEntity = d.GetParentEntity()
+	d.ParentAttribute = "location_id"
+	entity := d.MapToEntity()
 	entity.AddCategory("LOCATION")
-	decoder.AppendToParentEntity(entity)
+	d.AppendToParentEntity(entity)
 
 	return entity
 }

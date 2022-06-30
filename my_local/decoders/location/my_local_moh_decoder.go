@@ -8,6 +8,7 @@ import (
 
 type MyLocalMOHDecoder struct {
 	decoders.MyLocalDecoderInterface
+	MyLocalLocationDecoder
 }
 
 func (d MyLocalMOHDecoder) DecodeToEntity(record []string, source string, headers []string) models.Entity {

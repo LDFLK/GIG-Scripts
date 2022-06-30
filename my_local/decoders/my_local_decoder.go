@@ -13,7 +13,6 @@ type MyLocalDecoderInterface interface {
 }
 
 type MyLocalDecoder struct {
-	MyLocalDecoderInterface
 	ParentId        string
 	Category        string
 	Attribute       string
