@@ -10,7 +10,6 @@ type MyLocalLocationDecoder struct {
 	decoders.MyLocalDecoderInterface
 	decoders.MyLocalDecoder
 	LocationId string `json:"locationId"`
-	Name       string `json:"name"`
 	Centroid   string `json:"centroid"`
 	Population string `json:"population"`
 	GeoSource  string `json:"geoSource"`

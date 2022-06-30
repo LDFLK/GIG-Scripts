@@ -13,6 +13,7 @@ type MyLocalDecoderInterface interface {
 }
 
 type MyLocalDecoder struct {
+	Name            string `json:"name"`
 	ParentId        string
 	Category        string
 	Attribute       string
