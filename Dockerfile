@@ -12,4 +12,5 @@ RUN go get golang.org/x/net/html
 RUN go get golang.org/x/image/tiff/lzw
 RUN go get gopkg.in/mgo.v2/bson
 
-CMD go run kavuda/crawl.go
+COPY orgchart/import_orgchart_data.sh
+CMD run orgchart/import_orgchart_data.sh
