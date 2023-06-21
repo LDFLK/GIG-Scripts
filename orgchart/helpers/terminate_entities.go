@@ -1,11 +1,12 @@
 package helpers
 
 import (
-	"GIG-Scripts"
+	GIG_Scripts "GIG-Scripts"
 	"GIG-Scripts/orgchart/constants"
-	"github.com/lsflk/gig-sdk/models"
 	"log"
 	"time"
+
+	"github.com/lsflk/gig-sdk/models"
 )
 
 func TerminateEntities(fileName string, entityName string) {
