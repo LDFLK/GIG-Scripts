@@ -1,13 +1,14 @@
 package main
 
 import (
-	"GIG-Scripts"
+	GIG_Scripts "GIG-Scripts"
 	"GIG-Scripts/orgchart/helpers"
 	"flag"
-	"github.com/lsflk/gig-sdk/libraries"
-	"github.com/lsflk/gig-sdk/models"
 	"log"
 	"os"
+
+	"github.com/lsflk/gig-sdk/libraries"
+	"github.com/lsflk/gig-sdk/models"
 )
 
 func main() {
@@ -43,8 +44,11 @@ func main() {
 			panic(err)
 		}
 
+		log.Println("P1 Done")
+
 		//save to db
 		_, saveErr := GIG_Scripts.GigClient.CreateEntity(organization.Entity)
+		log.Println("P2 Done")
 		libraries.ReportError(saveErr, ministry)
 	}
 
